@@ -10,13 +10,13 @@ module ::DiscoursePluginAnonymizeUser
       render json: { hello: "index" }
     end
 
-    # def getanonymize
-    #   render json: { hello: "getanonymize" }
-    # end
+    def getanonymize
+      render json: { hello: "getanonymize" }
+    end
 
-    # def getanonymize2
-    #   render json: { hello: "getanonymize2" }
-    # end
+    def getanonymize2
+      render json: { hello: "getanonymize2" }
+    end
 
     # def anonymize
     #   params.require(:id)
