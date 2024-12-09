@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DiscoursePluginAnonymizeUser
+module ::DiscoursePluginAnonymizeUser
   class UsersController < ::ApplicationController
     requires_plugin PLUGIN_NAME
     requires_login
