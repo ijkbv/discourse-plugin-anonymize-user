@@ -7,15 +7,10 @@ module ::DiscoursePluginAnonymizeUser
     before_action :ensure_staff
 
     def index
-      render json: { hello: "index" }
     end
 
     def getanonymize
       render json: { hello: "getanonymize" }
-    end
-
-    def getanonymize2
-      render json: { hello: "getanonymize2" }
     end
 
     # def anonymize
