@@ -2,8 +2,8 @@
 require_dependency "anonymize_user_constraint"
 
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
-  scope "userss" do
-    get "/test" => "users#index"
+  scope "foo" do
+    get "/" => "users#index"
   end
 end
 
