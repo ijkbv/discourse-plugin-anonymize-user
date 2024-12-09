@@ -5,10 +5,22 @@ module ::DiscoursePluginAnonymizeUser
     requires_plugin PLUGIN_NAME
 
     def index
+      puts "index"
+      head 200
+    end
+
+    def getanonymize
+      puts "getanonymize"
+      head 200
+    end
+
+    def getanonymize2
+      puts "getanonymize2"
       head 200
     end
 
     def anonymize
+      puts "anonymize"
       @user = User.find_by(id: params[:id])
       raise Discourse::NotFound unless @user
 
