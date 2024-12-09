@@ -3,10 +3,7 @@ require_dependency "anonymize_user_constraint"
 
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
   scope "/users" do
-    get "/test" => "users#index"
-    get "/:id/getanonymize" => "users#getanonymize", :constraints => { id: /[\w.\-\+\%\&]+/i }
-    get "/:id/getanonymize2" => "users#getanonymize2"
-    put "/:id/anonymize" => "users#anonymize", :constraints => { id: /[\w.\-\+\%\&]+/i }
+    get "/" => "users#index"
   end
 end
 
