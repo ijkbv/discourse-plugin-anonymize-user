@@ -1,3 +1,4 @@
 discourse_plugin_anonymize_user:
   discourse_plugin_anonymize_user_enabled:
-    default: false
+    default: true
+    client: true

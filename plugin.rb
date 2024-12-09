@@ -17,4 +17,5 @@ require_relative "lib/discourse_plugin_anonymize_user/engine"
 
 after_initialize do
   # Code which should run after Rails has finished booting
+  Discourse::Application.routes.append { mount ::DiscoursePluginAnonymizeUser::Engine, at: "anonymize-plugin" }
 end

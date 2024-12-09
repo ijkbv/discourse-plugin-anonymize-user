@@ -9,5 +9,3 @@ DiscoursePluginAnonymizeUser::Engine.routes.draw do
     put "/:id/anonymize" => "users#anonymize", :constraints => { id: /[%\w.\-]+?/ }
   end
 end
-
-Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "anonymize-plugin" }
