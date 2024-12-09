@@ -13,22 +13,19 @@ module ::DiscoursePluginAnonymizeUser
       render json: { hello: "getanonymize" }
     end
 
-    # def anonymize
-    #   params.require(:id)
-    #   begin
-    #     @user = User.find_by(id: params[:id])
-    #     raise Discourse::NotFound unless @user
+    def anonymize
+      @user = User.find_by(id: params[:id])
+      raise Discourse::NotFound unless @user
 
-    #     guardian.ensure_can_anonymize_user!(@user)
-    #     opts = {}
-    #     opts[:anonymize_ip] = "0.0.0.0"
+      guardian.ensure_can_anonymize_user!(@user)
+      opts = {}
+      opts[:anonymize_ip] = "0.0.0.0"
 
-    #     if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
-    #       render json: success_json.merge(username: user.username)
-    #     else
-    #       render json: failed_json.merge(user: AdminDetailedUserSerializer.new(user, root: false).as_json)
-    #     end
-    #   end
-    # end
+      if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
+        render json: success_json.merge(username: user.username)
+      else
+        render json: failed_json.merge(user: AdminDetailedUserSerializer.new(user, root: false).as_json)
+      end
+    end
   end
 end
