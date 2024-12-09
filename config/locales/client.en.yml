@@ -4,6 +4,3 @@ en:
       site_settings:
         categories:
           discourse_plugin_anonymize_user: "Discourse Plugin Anonymize User"
-  js:
-    discourse_plugin_name:
-      placeholder: placeholder
