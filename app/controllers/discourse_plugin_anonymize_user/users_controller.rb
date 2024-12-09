@@ -20,6 +20,12 @@ module ::DiscoursePluginAnonymizeUser
       guardian.ensure_can_anonymize_user!(@user)
       opts = {}
       opts[:anonymize_ip] = "0.0.0.0"
+
+      if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
+        opts = {}
+      else
+        opts = {}
+      end
     end
   end
 end
