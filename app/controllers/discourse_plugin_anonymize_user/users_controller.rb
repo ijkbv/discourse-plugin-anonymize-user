@@ -22,7 +22,7 @@ module ::DiscoursePluginAnonymizeUser
       # opts[:anonymize_ip] = "0.0.0.0"
 
       # if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
-      render json: { hello: "getanonymize" } 
+      # render json: { hello: "getanonymize" } 
       #success_json.merge(username: user.username)
       # else
       #   render json: failed_json.merge(user: AdminDetailedUserSerializer.new(user, root: false).as_json)
