@@ -4,7 +4,7 @@
 # about: Anonymize user including ip address
 # version: 0.0.2
 # authors: IJK Development
-# url: https://github.com/developmentijk/discourse-plugin-anonymize-user
+# url: https://github.com/ijkbv/discourse-plugin-anonymize-user
 # required_version: 2.7.0
 
 enabled_site_setting :discourse_plugin_anonymize_user_enabled
