@@ -7,24 +7,20 @@ module ::DiscoursePluginAnonymizeUser
     before_action :ensure_staff
 
     def index
-      puts "index"
       head 201
     end
 
     def getanonymize
-      puts "getanonymize"
       head 202
     end
 
     def getanonymize2
-      puts "getanonymize2"
       head 203
     end
 
     def anonymize
       params.require(:id)
       begin
-        puts "anonymize"
         @user = User.find_by(id: params[:id])
         raise Discourse::NotFound unless @user
 
