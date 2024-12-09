@@ -10,4 +10,4 @@ DiscoursePluginAnonymizeUser::Engine.routes.draw do
   end
 end
 
-Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "anonymize-plugin" }
+Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "a-plugin" }
