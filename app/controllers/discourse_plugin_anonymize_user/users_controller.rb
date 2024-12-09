@@ -23,6 +23,11 @@ module ::DiscoursePluginAnonymizeUser
 
       if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
         render json: success_json.merge(username: user.username)
+      else
+        render json:
+          failed_json.merge(
+            user: AdminDetailedUserSerializer.new(user, root: false).as_json
+          )
       end
     end
   end
