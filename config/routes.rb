@@ -3,7 +3,7 @@ require_dependency "anonymize_user_constraint"
 
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
   get "/" => "anonymize#index"
-  put "/full" => "anonymize#anonymizefull"
+  get "/full" => "anonymize#anonymizefull"
 end
 
 Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "anonymize-plugin" }
