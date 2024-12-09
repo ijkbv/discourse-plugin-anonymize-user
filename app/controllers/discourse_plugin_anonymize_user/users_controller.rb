@@ -9,10 +9,6 @@ module ::DiscoursePluginAnonymizeUser
     def index
     end
 
-    def getanonymize
-      render json: { hello: "getanonymize" }
-    end
-
     def anonymize
       @user = User.find_by(id: params[:id])
       raise Discourse::NotFound unless @user
