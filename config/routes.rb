@@ -2,11 +2,12 @@
 require_dependency "anonymize_user_constraint"
 
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
-  namespace :anonymize do
-    get "/" => "anonymize#index"
-    get "/:id/anonymize" => "anonymize#getanonymize"
-    put "/:id/anonymize" => "anonymize#anonymize"
+  scope path: nil, constraints: { format: %r{(json|html|\*/\*)} } do
+    namespace :users, constraints: StaffConstraint.new do
+      get "/" => "users#index"
+      put "/:id/anonymize" => "users#anonymize", :constraints => { id: /[%\w.\-]+?/ }
+    end
   end
 end
 
-Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "a" }
+Discourse::Application.routes.draw { mount ::DiscoursePluginAnonymizeUser::Engine, at: "ijk" }

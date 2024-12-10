@@ -1,19 +1,17 @@
 # frozen_string_literal: true
 
 module ::DiscoursePluginAnonymizeUser
-  class AnonymizeController < ::ApplicationController
+  class UsersController < ::ApplicationController
     requires_plugin PLUGIN_NAME
     requires_login
+    before_action :ensure_staff
 
     def index
     end
 
-    def getanonymize
-      render json: { error: "You need to use PUT request" }
-    end
-
     def anonymize
       @user = User.find_by(id: params[:id])
+      raise Discourse::NotFound unless @user
 
       guardian.ensure_can_anonymize_user!(@user)
       opts = {}
