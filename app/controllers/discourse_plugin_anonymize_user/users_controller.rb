@@ -11,7 +11,7 @@ module ::DiscoursePluginAnonymizeUser
 
     def anonymize
       @user = User.find_by(id: params[:id])
-      raise Discourse::NotFound unless @user
+      raise Discourse::InvalidAccess unless @user
 
       guardian.ensure_can_anonymize_user!(@user)
       opts = {}
