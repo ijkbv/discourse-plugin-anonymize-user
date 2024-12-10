@@ -4,7 +4,6 @@ require_dependency "anonymize_user_constraint"
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
   scope path: nil, constraints: { format: %r{(json|html|\*/\*)} } do
     namespace :users, constraints: StaffConstraint.new do
-      get "/" => "users#index"
       put "/:id/anonymize" => "users#anonymize", :constraints => { id: /[%\w.\-]+?/ }
     end
   end
