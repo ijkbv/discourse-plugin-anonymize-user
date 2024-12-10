@@ -9,9 +9,12 @@ module ::DiscoursePluginAnonymizeUser
     def index
     end
 
+    def getanonymize
+      render json: { error: "You need to use PUT request" }
+    end
+
     def anonymize
       @user = User.find_by(id: params[:id])
-      raise Discourse::InvalidAccess unless @user
 
       guardian.ensure_can_anonymize_user!(@user)
       opts = {}
