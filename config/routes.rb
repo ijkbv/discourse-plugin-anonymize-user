@@ -4,6 +4,7 @@ require_dependency "anonymize_user_constraint"
 DiscoursePluginAnonymizeUser::Engine.routes.draw do
   scope path: nil do
     namespace :users do
+      get "/" => "users#index"
       get "/:id/anonymize" => "users#getanonymize"
       put "/:id/anonymize" => "users#anonymize"
     end
