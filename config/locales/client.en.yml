@@ -1,0 +1,6 @@
+en:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          discourse_plugin_anonymize_user: "Discourse Plugin Anonymize User"
