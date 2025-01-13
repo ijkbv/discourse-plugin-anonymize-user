@@ -19,9 +19,9 @@ module DiscoursePluginAnonymizeUser
 
       if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
         # Rebake all posts of the user to refresh excerpts
-        Post.where(user_id: @user.id).find_each do |post|
-          post.rebake!
-        end
+        # Post.where(user_id: @user.id).find_each do |post|
+        #   post.rebake!
+        # end
         render json: success_json.merge(username: user.username)
       else
         render json: failed_json.merge(username: user.username)
