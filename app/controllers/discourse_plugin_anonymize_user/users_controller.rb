@@ -22,10 +22,10 @@ module DiscoursePluginAnonymizeUser
         sleep(1)
 
         # Rebake all posts where the user is mentioned to refresh excerpts
-        Post.find_each do |post|
-          sleep(1)
-        end
-        
+        # Post.find_each do |post|
+        #   sleep(1)
+        # end
+
         render json: success_json.merge(username: user.username)
       else
         render json: failed_json.merge(username: user.username)
