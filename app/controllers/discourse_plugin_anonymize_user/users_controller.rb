@@ -20,7 +20,6 @@ module DiscoursePluginAnonymizeUser
       if user = UserAnonymizer.new(@user, current_user, opts).make_anonymous
         # Sleep 1 second, otherwise the rebake is too soon
         sleep(1)
-
         # Rebake all posts where the user is mentioned to refresh excerpts
         Post.where("raw LIKE ?", "%@#{@user.username}%").find_each do |post|
           post.rebake!
