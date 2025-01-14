@@ -22,7 +22,7 @@ module DiscoursePluginAnonymizeUser
         sleep(1)
 
         # Rebake all posts where the user is mentioned to refresh excerpts
-        Post.count
+        Post.where("raw LIKE ?", "%@#{@user.username}%")
 
         render json: success_json.merge(username: user.username)
       else
