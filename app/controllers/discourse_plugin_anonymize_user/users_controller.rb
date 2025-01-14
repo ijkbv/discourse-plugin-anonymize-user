@@ -24,7 +24,7 @@ module DiscoursePluginAnonymizeUser
         # Rebake all posts where the user is mentioned to refresh excerpts
         Post
           .find_each do |post|
-            post.rebake!
+            post.raw = "test"
           end
         render json: success_json.merge(username: user.username)
       else
