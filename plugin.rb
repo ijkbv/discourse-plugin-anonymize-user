@@ -2,7 +2,7 @@
 
 # name: discourse-plugin-anonymize-user
 # about: Anonymize user including IP address
-# version: 1.0.2
+# version: 1.0.3
 # authors: IJK Development
 # url: https://github.com/ijkbv/discourse-plugin-anonymize-user
 
